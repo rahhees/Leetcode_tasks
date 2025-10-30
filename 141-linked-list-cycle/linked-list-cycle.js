@@ -1,13 +1,15 @@
 var hasCycle = function(head) {
- let first = head;
- let  val = new Set();
- while(first){
-    if(val.has(first)){
-        return true
+    let slow = head;
+    let fast = head;
+
+    while (fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow === fast) {
+            return true; // cycle detected
+        }
     }
-    val.add(first);
-    first = first.next
- }
- return false
- 
+
+    return false; // no cycle
 };
