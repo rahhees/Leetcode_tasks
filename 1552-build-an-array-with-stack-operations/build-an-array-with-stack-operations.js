@@ -10,7 +10,7 @@ var buildArray = function(target, n) {
     if(!target.includes(i)){
         array.push("Pop")
     }
-    if(i===target[target.length-1]) break;
+        if(i==target[target.length-1]) break;
    }
     return array;
 };
